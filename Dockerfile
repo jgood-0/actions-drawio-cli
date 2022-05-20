@@ -17,4 +17,4 @@ RUN apt autoremove -y && \
     rm -rf /var/lib/apt/lists/ && \
     rm -f ./draw.io-amd64-${DRAWIO_VERSION}.deb
 
-ENTRYPOINT ["sh", "-c", "xvfb-run -a /usr/bin/drawio -f ${INPUT_FORMAT} -x -o ${INPUT_DESTINATION} ${INPUT_SOURCE} --no-sandbox"]
+ENTRYPOINT ["sh", "-c", "xvfb-run -a /usr/bin/drawio -f ${INPUT_FORMAT} -x -r -o ${INPUT_DESTINATION} ${INPUT_SOURCE} --no-sandbox"]
